@@ -1,0 +1,29 @@
+$--media-query-576: '(min-width:575.98px)';
+$--media-query-768: '(min-width:767.98px)';
+$--media-query-1024: '(min-width:1023.98px)';
+$--media-query-1280: '(min-width:1279.98px)';
+
+$--container-width-320: 280px;
+$--container-width-576: 536px;
+$--container-width-768: 720px;
+$--container-width-1024: 960px;
+$--container-width-1280: 1200px;
+
+$--section-x-padding-320: 20px;
+$--section-x-padding-576: calc(50vw - 268px);
+$--section-x-padding-768: calc(50vw - 360px);
+$--section-x-padding-1024: calc(50vw - 480px);
+$--section-x-padding-1280: calc(50vw - 600px);
+
+$--section-x-padding-minus-320: -20px;
+$--section-x-padding-minus-576: calc((50vw - 268px) * -1);
+$--section-x-padding-minus-768: calc((50vw - 360px) * -1);
+$--section-x-padding-minus-1024: calc((50vw - 480px) * -1);
+$--section-x-padding-minus-1280: calc((50vw - 600px) * -1);
+$--section-x-padding-320: 60px;
+$--section-x-padding-576: 0px;
+$--section-x-padding-768: 0px;
+$--section-x-padding-1024: 70px;
+$--section-x-padding-1280: 100px;
+
+$--text-font: Prompt, sans-serif;
