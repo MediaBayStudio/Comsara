@@ -26,5 +26,8 @@
     width: 26px;
     height: 14px;
     background: url('../img/icon-burger.svg') center/contain no-repeat;
+    &:active {
+      transform: scale(.9);
+    }
   }
 }

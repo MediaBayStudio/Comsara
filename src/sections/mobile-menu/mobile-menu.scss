@@ -2,7 +2,6 @@
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
 
-
 .menu {
   width: 100%;
   height: 100vh;
@@ -25,79 +24,58 @@
   }
 
   &__cnt {
-    padding: 0 20px;
+    padding: 0 20px 8vh;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
     height: 100%;
-    // background: $black;
-    // color: $white;
+    background: $--white-color;
+    color: $--black-color;
   }
 
   &__hdr {
+    margin: 0 0 30px;
     width: 100%;
     display: flex;
     align-items: center;
+    height: $--header-height-320;
   }
 
   &__logo-img {
+    margin: 0 auto 0 0;
     object-fit: contain;
   }
 
   &__nav {
     &-list {
-      // display: flex;
-      // flex-flow: column;
-      // font: 20px/1.2 $--text-font;
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      font: 500 26px/1.5 $--text-font;
+      letter-spacing: 0.01em;
       // text-align: center;
 
-      .nav-link {
-        // padding: 25px 0;
-        // display: block;
-        // transition: color .5s;
-        // &:hover {
-        // color: $accent;
-        // }
-      }
+      .nav-link {}
     }
 
-    &-li {}
+    &-li {
+      &:nth-last-child(n+2) {
+        margin-bottom: 15px;
+      }
+    }
   }
 
   &__close {
+    width: 25px;
+    height: 25px;
+    background: url('../img/icon-close.svg') center/contain no-repeat;
 
-    // margin: 0 0 0 auto;
-    // position: relative;
-    // font-size: 18px;
-    &:hover {
-      // color: $accent;
+    &:active {
+      transform: scale(.9);
     }
   }
 
-  &__links {
-    // margin: auto 0 0;
-    // display: flex;
-    // align-items: center;
+  &__contacts {
+    margin: auto 0 0;
   }
-
-  &__ftr {}
-
-  &__links,
-  &__contacts {}
-
-  &__links {}
-
-  &__contacts {}
-
-  &__tel {}
-
-  &__email {}
-
-  &__address {}
-
-  &__instagram {}
-
-  &__facebook {}
-
-  &__telegram {}
-
-  &__whatsapp {}
-
 }

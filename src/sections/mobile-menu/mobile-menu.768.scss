@@ -1,3 +1,31 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.menu {
+
+  &.active {}
+
+  &__cnt {}
+
+  &__hdr {
+    height: $--header-height-768;
+  }
+
+  &__logo-img {}
+
+  &__nav {
+    &-list {
+
+      .nav-link {}
+    }
+
+    &-li {}
+  }
+
+  &__close {
+    &:hover {}
+  }
+
+  &__contacts {}
+}
