@@ -1,8 +1,5 @@
-      <?php
-        global 
-          $site_url,
-          $template_directory_uri ?>
       <footer class="ftr container">
+        <p class="ftr__copyright">&copy; COMSARA ApS, <?php echo date( 'Y' ) ?></p>
       </footer>
       <div id="fake-scrollbar"></div> <?php
       wp_footer() ?>

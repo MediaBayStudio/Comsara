@@ -1,3 +1,13 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.ftr {
+  margin-top: $--section-y-padding-1024;
+  padding-bottom: 50px;
+
+  &::before {
+    margin: 0 0 40px;
+  }
+  &__copyright {}
+}
