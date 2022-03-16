@@ -3,10 +3,13 @@
 @import '../../scss/assets/variables';
 
 .index-hero {
+  margin-bottom: $--section-y-padding-1280;
   padding-top: 90px;
   padding-bottom: 110px;
 
-  &__pic {}
+  &__pic {
+    right: calc(50vw - 725px);
+  }
 
   &__img {}
 

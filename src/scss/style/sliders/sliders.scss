@@ -1,29 +1,30 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
 .dots {
+  margin: 25px auto 0;
   display: flex;
   justify-content: center;
-  > li {
+
+  >li {
     &:nth-last-child(n+2) {
-      margin-right: 14px;
+      margin-right: 10px;
     }
   }
 }
 
-li.slick-active > .dot {
-  cursor: default;
-  transform: scale(2);
-  // background: $red;
+li.slick-active>.dot {
+  pointer-events: none;
+  background: $--accent-color;
 }
 
 .dots .dot {
-  width: 6px;
-  height: 6px;
-  // background: $light;
+  width: 8px;
+  height: 8px;
+  background: $--background-color;
   border-radius: 50%;
-  transition: transform .5s, color .5s
+  transition: background .5s
 }
 
 .slick {
@@ -31,16 +32,20 @@ li.slick-active > .dot {
     user-select: none;
     touch-action: pan-y;
   }
+
   &-list {
     width: 100%;
     position: relative;
+
     &.draggable {
       cursor: grab;
     }
+
     &.grabbing {
       cursor: grabbing;
     }
   }
+
   &-track {
     display: flex;
     margin-left: auto;
@@ -48,19 +53,23 @@ li.slick-active > .dot {
     position: relative;
     top: 0;
     left: 0;
+
     &::after,
     &::before {
       display: table;
       content: '';
     }
+
     &::after {
       clear: both;
     }
   }
+
   &-dotted {
     display: flex;
     flex-direction: column;
-    > .dots {
+
+    >.dots {
       order: 10;
     }
   }
@@ -69,25 +78,28 @@ li.slick-active > .dot {
 .slick-track,
 .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
-     -moz-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-       -o-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 
 .arrow {
   display: flex;
   transition: opacity .5s, fill .5s;
+
   &.slick-disabled {
     opacity: 0.5;
     pointer-events: none;
   }
+
   &-prev {
-    > .arrow__svg {
+    >.arrow__svg {
       transform: rotate(180deg);
     }
   }
+
   &__svg {
     pointer-events: none;
   }

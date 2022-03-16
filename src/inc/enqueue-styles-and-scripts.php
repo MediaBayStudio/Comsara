@@ -50,7 +50,7 @@ add_action( 'wp_enqueue_scripts', function() {
   }
 
   // Scripts
-	$scripts = ['svg4everybody.min.js', 'lazyload.min.js', 'Popup.min.js', 'script.js'];
+	$scripts = ['svg4everybody.min.js', 'lazyload.min.js', 'Popup.min.js', 'slick.min.js', 'script.js'];
 
   if ( $GLOBALS['page_script_name'] ) {
     $scripts[] = $GLOBALS['page_script_name'] . '.js';
@@ -74,6 +74,7 @@ add_action( 'wp_enqueue_scripts', function() {
     switch ( $handle ) {
       case 'svg4everybody.min.js':
   		case 'lazyload.min.js':
+      case 'slick.min.js':
   		case 'Popup.min.js':
   		case 'script.js':
       case $GLOBALS['page_script_name'] . '.js':

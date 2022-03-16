@@ -1,3 +1,41 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-features {
+  &__title {}
+
+  &__list {
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__dots {
+    order: 10;
+  }
+}
+
+.features {
+  &__item {
+    flex-shrink: 0;
+    width: calc(100vw - #{$--section-x-padding-320 * 2});
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+}
+
+.feature {
+  &__img {
+    margin: 0 0 20px 0;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__title {
+    margin: 0 0 15px 0;
+  }
+
+  &__descr {}
+}

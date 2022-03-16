@@ -1,3 +1,21 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-features {
+  &__title {}
+
+  &__items {}
+}
+
+.features {
+  &__item {}
+}
+
+.feature {
+  &__img {}
+
+  &__title {}
+
+  &__descr {}
+}

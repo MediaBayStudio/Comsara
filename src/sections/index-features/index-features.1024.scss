@@ -1,3 +1,28 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-features {
+  &__title {}
+
+  &__list {}
+}
+
+.features {
+  &__item {
+    width: calc((100% - 60px) / 3);
+    &:nth-last-child(n+2) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.feature {
+  &__img {}
+
+  &__title {}
+
+  &__descr {
+    margin-top: auto;
+  }
+}

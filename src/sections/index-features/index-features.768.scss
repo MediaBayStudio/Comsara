@@ -1,3 +1,33 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-features {
+  &__title {}
+
+  &__list {
+    text-align: left;
+  }
+}
+
+.features {
+  &__item {
+    width: calc(50% - 10px);
+    align-items: flex-start;
+    &:nth-last-child(n+2) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.feature {
+  &__img {
+    margin: 0 0 30px;
+    width: 60px;
+    height: 60px;
+  }
+
+  &__title {}
+
+  &__descr {}
+}

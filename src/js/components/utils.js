@@ -35,7 +35,7 @@
 var SLIDER = {
   // nextArrow: '<button type="button" class="arrow"></button>',
   // prevArrow: '<button type="button" class="arrow"></button>',
-  // dot: '<button type="button" class="dot"></button>',
+  dot: '<button type="button" class="dot"></button>',
   hasSlickClass: function($el) {
     return $el.hasClass('slick-slider');
   },
