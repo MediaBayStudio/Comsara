@@ -12,7 +12,7 @@ html[lang] {
 }
 
 body {
-  font: 14px/1.5 $--text-font;
+  font: 300 14px/1.5 $--text-font;
   color: $--black-color;
   // no-scroll is added by open mobile-menu or popups
   &.no-scroll {
@@ -154,6 +154,22 @@ body {
 
 // Sections
 .sect {
+  padding-top: $--section-y-padding-320;
+  padding-bottom: $--section-y-padding-320;
+  &-h1 {
+    font: 500 28px/1.3 $--text-font;
+    letter-spacing: 0.01em;
+  }
+
+  &-h2 {
+    font: 500 26px/1.5 $--text-font;
+    letter-spacing: 0.01em;
+  }
+
+  &-h3 {
+    font: 500 20px/1.5 $--text-font;
+  }
+
   &-bg {}
 
   &-title {}

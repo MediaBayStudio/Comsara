@@ -1,3 +1,22 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-hero {
+  padding-top: 90px;
+  padding-bottom: 110px;
+
+  &__pic {}
+
+  &__img {}
+
+  &__title {
+    max-width: 640px;
+  }
+
+  &__descr {
+    max-width: 430px;
+  }
+
+  &__btns {}
+}

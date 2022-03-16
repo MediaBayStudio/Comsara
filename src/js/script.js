@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
     allowPageScroll: false
   });
 
-  menu.open();
+  // menu.open();
 
-  // let navLinks = qa('.nav-link, .hdr__callback');
+  let navLinks = qa('.nav-link[href^="#"], .btn[data-scroll-target], .hdr__logo-img[data-scroll-target]');
 
-  // for (let i = 0, len = navLinks.length; i < len; i++) {
-  // navLinks[i].addEventListener('click', scrollToTarget);
-  // }
+  for (let i = 0, len = navLinks.length; i < len; i++) {
+    navLinks[i].addEventListener('click', scrollToTarget);
+  }
 
   // sticky(hdr);
 

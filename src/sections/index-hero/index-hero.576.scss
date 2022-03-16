@@ -1,3 +1,9 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-hero {
+  &__pic {
+    margin-right: $--section-x-padding-minus-576;
+  }
+}

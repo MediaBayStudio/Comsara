@@ -1,4 +1,22 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+.sect {
+  padding-top: $--section-y-padding-1280;
+  padding-bottom: $--section-y-padding-1280;
+
+  &-h1 {
+    font-size: 60px;
+  }
+
+  &-h2 {}
+
+  &-h3 {}
+
+  &-bg {}
+
+  &-title {}
+
+  &-descr {}
+}

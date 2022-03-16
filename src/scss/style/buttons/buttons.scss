@@ -1,15 +1,18 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
 .btn {
-  
+  font: 500 14px/1.5 $--text-font;
 }
 
-.btn-blue {
-
+.btn-primary {
+  border: 1px solid $--accent-color;
+  background: $--accent-color;
+  color: $--white-color;
 }
 
-.btn-ol {
-
+.btn-ol-primary {
+  border: 1px solid $--accent-color;
+  color: $--black-color;
 }

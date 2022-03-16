@@ -10,24 +10,26 @@ add_action( 'admin_enqueue_scripts', function() {
   wp_enqueue_style( "style-admin", $template_directory_uri . "/css/style-admin.css", [], $version );
 } );
 
-function enqueue_style( $style_name, $widths ) {
-  global $template_directory_uri, $template_directory, $version;
+function enqueue_style( $style_name, $widths, $uri = '' ) {
+  global $template_directory, $version;
+
   if ( !$version) {
     $version = null;
   }
 
   if ( is_string( $widths ) ) {
-    wp_enqueue_style( "{$style_name}", "{$template_directory_uri}/css/{$style_name}.css", [], $version );
+    wp_enqueue_style( "{$style_name}", "{$uri}/{$style_name}.css", [], $version );
   } else {
     foreach ( $widths as $width ) {
       if ( $width !== "0" ) {
         $media = $width - 0.02;
-        if ( filesize( "{$template_directory}/css/{$style_name}.{$width}.css" ) === 0 ) {
+         // если размер файла равен 0, то не подключаем его
+        if ( filesize( "{$template_directory}/{$style_name}.{$width}.css" ) === 0 ) {
           continue;
         }
-        wp_enqueue_style( "{$style_name}-{$width}px", "{$template_directory_uri}/css/{$style_name}.{$width}.css", [], $version, "(min-width: {$media}px)" );
+        wp_enqueue_style( "{$style_name}-{$width}px", "{$uri}/{$style_name}.{$width}.css", [], $version, "(min-width: {$media}px)" );
       } else {
-        wp_enqueue_style( "{$style_name}-page", "{$template_directory_uri}/css/{$style_name}.css", [], $version );
+        wp_enqueue_style( "{$style_name}", "{$uri}/{$style_name}.css", [], $version );
       }
     }
   }
@@ -40,11 +42,11 @@ add_action( 'wp_enqueue_scripts', function() {
   }
 
   // Theme style
-  wp_enqueue_style( 'theme-style', get_stylesheet_uri(), [], $version );
+  enqueue_style( 'style', $screen_widths, $template_directory_uri );
 
   // Page style
   if ( $GLOBALS['page_style_name'] ) {
-    enqueue_style( $GLOBALS['page_style_name'], $screen_widths );
+    enqueue_style( $GLOBALS['page_style_name'], $screen_widths, $template_directory_uri . '/css' );
   }
 
   // Scripts

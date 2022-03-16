@@ -1,4 +1,24 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+body {
+  font-size: 18px;
+}
+
+.sect {
+  padding-top: $--section-y-padding-1024;
+  padding-bottom: $--section-y-padding-1024;
+
+  &-h1 {}
+
+  &-h2 {}
+
+  &-h3 {}
+
+  &-bg {}
+
+  &-title {}
+
+  &-descr {}
+}

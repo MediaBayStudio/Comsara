@@ -21,6 +21,46 @@ $preload[] = [
 if ( is_front_page() ) {
   $script_name = 'script-index';
   $style_name = 'style-index';
+
+  $first_screen_image_ending = $webp_support ? 'webp' : 'jpg';
+  $first_screen_image_type = $webp_support ? 'image/webp' : 'image/jpeg';
+  $first_screen_images = [
+    [
+      'url' => 'index-hero-img.1280',
+      'imagesrcset' => 'index-hero-img.1280@2x',
+      'media' => '(min-width:1279.98px)'
+    ],
+    [
+      'url' => 'index-hero-img.1024',
+      'imagesrcset' => 'index-hero-img.1024@2x',
+      'media' => '(min-width:1023.98px) and (max-width:1279.98px)'
+    ],
+    [
+      'url' => 'index-hero-img.768',
+      'imagesrcset' => 'index-hero-img.768@2x',
+      'media' => '(min-width:767.98px) and (max-width:1023.98px)'
+    ],
+    [
+      'url' => 'index-hero-img.576',
+      'imagesrcset' => 'index-hero-img.576@2x',
+      'media' => '(min-width:575.98px) and (max-width:767.98px)'
+    ],
+    [
+      'url' => 'index-hero-img',
+      'imagesrcset' => 'index-hero-img@2x',
+      'media' => '(max-width:575.98px)'
+    ]
+  ];
+
+  foreach ( $first_screen_images as $first_screen_image ) {
+    $preload[] = [
+      'url' => "{$template_directory_uri}/img/{$first_screen_image['url']}.{$first_screen_image_ending}",
+      'imagesrcset' => "{$template_directory_uri}/img/{$first_screen_image['imagesrcset']}.{$first_screen_image_ending} 2x",
+      'type' => $first_screen_image_type,
+      'media' => $first_screen_image['media']
+    ];
+  }
+
 } else if ( is_404() ) {
   $script_name = '';
   $style_name = 'style-index';
