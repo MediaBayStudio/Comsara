@@ -3,9 +3,17 @@
 @import '../../assets/mixins';
 @import '../../assets/variables';
 
+#wpadminbar {
+  display: none !important;
+}
+
+html[lang] {
+  margin-top: 0 !important;
+}
+
 body {
-  // font: 14px/1.4 serif;
-  // color: $black;
+  font: 14px/1.5 $--text-font;
+  color: $--black-color;
   // no-scroll is added by open mobile-menu or popups
   &.no-scroll {
     overflow: hidden;

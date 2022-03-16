@@ -73,7 +73,7 @@ task('createinc', createInc);
 task('createsection', createSection);
 task('renamesection', renameSection);
 task('createpage', createPage);
-task('createcomponent', createBlock);
+task('createblock', createBlock);
 
 /**
  * Watch tasks
@@ -103,7 +103,7 @@ task('moveall', parallel(
  * Default tasks
  */
 task('default', function(done) {
-  watch(path.join(config.src.components, '**', '*.js'), buildJs);
+  watch(path.join(config.src.blocks, '**', '*.js'), buildJs);
   watch(path.join(config.src.sections, '**', '*.js'), buildJs);
   watch(path.join(config.src.js, 'components', '*.js'), buildJs);
   watch(path.join(config.src.js, 'script.js'), buildJs);

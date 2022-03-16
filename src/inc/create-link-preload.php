@@ -1,7 +1,12 @@
 <?php
 
 function create_link_preload( $args ) {
-  global $template_directory_uri, $webp_support;
+
+  if ( is_string( $args ) ) {
+    $args = [
+      'url' => $args
+    ];    
+  }
 
   if ( !$args['url'] ) {
     return;

@@ -1,3 +1,33 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+
+.hdr {
+  height: $--header-height-768;
+
+  &__logo-img {
+    width: 175px;
+    height: 40px;
+  }
+
+  &__nav {
+    display: block;
+    font: 300 16px/1.5 $--text-font;
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-li {
+    &:nth-last-child(n-2) {
+      margin-right: 2.5em;
+    }
+  }
+
+  &__burger {
+    display: none;
+  }
+}

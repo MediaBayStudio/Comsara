@@ -1,6 +1,6 @@
 (function() {
   const $forms = [
-    id("form")
+    // id("form")
     // qa('#conacts-form')
   ];
   const patterns = {

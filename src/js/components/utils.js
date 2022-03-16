@@ -222,8 +222,8 @@ var scrollToTarget = function(e, target) {
 * @arg {boolean} disallow If true - disallow scrolling, if false - allow scrolling. */
 var pageScroll = function(disallow) {
   fakeScrollbar.classList.toggle('active', disallow);
-  body.classList.toggle('no-scroll', disallow);
-  body.style.paddingRight = disallow ? fakeScrollbar.offsetWidth - fakeScrollbar.clientWidth + 'px' : '';
+  document.body.classList.toggle('no-scroll', disallow);
+  document.body.style.paddingRight = disallow ? fakeScrollbar.offsetWidth - fakeScrollbar.clientWidth + 'px' : '';
 };
 
 /**

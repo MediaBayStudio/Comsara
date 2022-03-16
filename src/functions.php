@@ -74,8 +74,9 @@ require $template_directory . '/inc/print-site-data-js.php';
 
 
 /**
- * Components
+ * blocks
  */
+require $template_directory . '/blocks/contacts-block/contacts-block.php';
 
 if ( is_super_admin() || is_admin_bar_showing() ) {
 

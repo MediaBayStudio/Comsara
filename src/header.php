@@ -13,6 +13,10 @@ global
   $template_directory_uri;
 
 $preload = [ $logo_url ];
+$preload[] = [
+  'url' => $template_directory_uri . '/img/icon-burger.svg',
+  'media' => '(max-width:767.98px)'
+];
 
 if ( is_front_page() ) {
   $script_name = 'script-index';
@@ -20,7 +24,6 @@ if ( is_front_page() ) {
 } else if ( is_404() ) {
   $script_name = '';
   $style_name = 'style-index';
-  // $preload[] = $template_directory_uri . '/img/404.svg';
  } else {
   if ( $current_template ) {
     $script_name = 'script-' . $GLOBALS['current_template'];
@@ -47,16 +50,19 @@ if ( $style_name ) :
 	foreach ( $screen_widths as $screen_width ) :
 		$suffix = $screen_width === '0' ? '' : '.' . $screen_width ?>
 		<link rel="preload" as="style" href="<?php echo "{$template_directory_uri}/css/{$style_name}{$suffix}.css?={$version}" ?>" /> <?php
-	endforeach;
-endif ?>
+  endforeach;
+endif;
+echo PHP_EOL ?>
   <!-- fonts preload --> <?php
 	$fonts = [
 		'Prompt-Medium.woff',
 		'Prompt-Light.woff'
 	];
-	foreach ( $fonts as $font ) : ?>
-	<link rel="preload" href="<?php echo "$template_directory_uri/fonts/$font" ?>" as="font" type="font/woff" crossorigin="anonymous" /> <?php
-	endforeach ?>
+foreach ( $fonts as $font ) : 
+  echo PHP_EOL ?>
+ <link rel="preload" href="<?php echo "$template_directory_uri/fonts/$font" ?>" as="font" type="font/woff" crossorigin="anonymous" /> <?php
+endforeach;
+echo PHP_EOL ?>
   <!-- other preload --> <?php
   echo PHP_EOL;
   if ( $preload ) {
@@ -78,13 +84,15 @@ endif ?>
     <!-- </noindex> -->
   </noscript>
   <div id="page-wrapper">
-    <header class="hdr container"> <?php
-      wp_nav_menu([
+    <header class="hdr container">
+      <img src="<?php echo $logo_url ?>" alt="Logo" width="130" height="30" data-scroll-target="0" class="hdr__logo-img"> <?php
+      wp_nav_menu( [
         'theme_location'  => 'header_menu',
         'container'       => 'nav',
         'container_class' => 'hdr__nav',
         'menu_class'      => 'hdr__nav-list',
         'items_wrap'      => '<ul class="%2$s">%3$s</ul>'
-      ]);
+      ] ) ?>
+      <button type="button" class="hdr__burger"></button> <?php
       require 'template-parts/mobile-menu.php' ?>
     </header>

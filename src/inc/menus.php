@@ -25,9 +25,9 @@ add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
     // case 'ftr__nav':
     //   $li_class = 'ftr__nav-li';
     //   break;
-    // case 'menu__nav':
-    //   $li_class = 'menu__nav-li';
-    //   break;
+    case 'menu__nav':
+      $li_class = 'menu__nav-li';
+      break;
     default:
       $li_class = 'nav__li';
       break;
