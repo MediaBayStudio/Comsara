@@ -1,7 +1,7 @@
 ;
 (function() {
-  const sections = qa('.index-technologies');
-  if (sections.length > 0) {
+  const sliders = qa('.index-technologies__list');
+  if (sliders.length > 0) {
     const buildTechnologiesSlider = function(slider, slides) {
       console.log('buildTechnologiesSlider');
       const $slider = $(slider);
@@ -35,8 +35,8 @@
         });
       }
     };
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const slider = q('.index-technologies__list', sections[i]);
+    for (let i = sliders.length - 1; i >= 0; i--) {
+      const slider = sliders[i];
       const slides = qa('.technologies__item', slider);
 
       if (slides.length && slides.length > 1) {

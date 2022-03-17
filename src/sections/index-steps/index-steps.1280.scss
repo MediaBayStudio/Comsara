@@ -1,3 +1,35 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-steps {
+  &__title {}
+
+  &__list {}
+}
+
+.steps {
+  &__item {}
+}
+
+.step {
+  $--step-padding: 40px;
+  padding: $--step-padding $--step-padding ($--step-padding + 10px);
+
+  &::before {
+    margin: 0 0 40px;
+  }
+
+  &__hint {
+    top: $--step-padding;
+    right: $--step-padding;
+  }
+
+  &__hint-title {}
+
+  &__hint-descr {}
+
+  &__title {}
+
+  &__btn {}
+}

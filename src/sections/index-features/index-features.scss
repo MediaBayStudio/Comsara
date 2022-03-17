@@ -19,7 +19,7 @@
 .features {
   &__item {
     flex-shrink: 0;
-    width: calc(100vw - #{$--section-x-padding-320 * 2});
+    max-width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;

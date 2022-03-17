@@ -1,6 +1,6 @@
 ;
 (function() {
-  let sliders = qa('.index-features');
+  let sliders = qa('.index-features__list');
   if (sliders.length > 0) {
     const buildFeaturesSlider = function(slider, slides) {
       console.log('buildFeaturesSlider');
@@ -41,7 +41,7 @@
       }
     };
     for (let i = sliders.length - 1; i >= 0; i--) {
-      const slider = q('.index-features__list', sliders[i]);
+      const slider = sliders[i];
       const slides = qa('.features__item', slider);
 
       if (slides.length && slides.length > 1) {

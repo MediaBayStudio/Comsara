@@ -1,3 +1,25 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-steps {
+  &__title {}
+
+  &__list {}
+}
+
+.steps {
+  &__item {}
+}
+
+.step {
+  &__hint {}
+
+  &__hint-title {}
+
+  &__hint-descr {}
+
+  &__title {}
+
+  &__btn {}
+}

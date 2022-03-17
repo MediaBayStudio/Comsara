@@ -1,3 +1,123 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-steps {
+  &__title {}
+
+  &__list {
+    counter-reset: steps;
+    display: flex;
+    .slick-list {
+      overflow: hidden;
+    }
+  }
+}
+
+.steps {
+  &__item {}
+}
+
+.step {
+  $--step-padding: 20px;
+  flex-shrink: 0;
+  padding: $--step-padding $--step-padding ($--step-padding + 10px);
+  max-width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  counter-increment: steps;
+  border: 1px solid $--border-color;
+  position: relative;
+
+  &::before {
+    content: '0'counter(steps);
+    margin: 0 0 30px;
+    display: block;
+    font: 500 48px/1 $--text-font;
+    color: $--accent-color;
+  }
+
+  p,
+  ul,
+  ol {
+    &:not([class]) {
+      &:nth-last-child(n+2) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    &:not([class]) {
+      >li {
+        display: flex;
+        align-items: flex-start;
+
+        &:nth-last-child(n+2) {
+          margin: 0 0 10px;
+        }
+      }
+    }
+  }
+
+  ul {
+    &:not([class]) {
+      >li {
+        &::before {
+          // font-size * line-height / 2
+          margin: calc(1.5em / 2) 20px 0 0;
+          flex-shrink: 0;
+          content: '';
+          width: 5px;
+          height: 5px;
+          background: $--accent-color;
+          border-radius: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  ol {
+    &:not([class]) {
+      counter-reset: ol;
+      >li {
+        counter-increment: ol;
+        &::before {
+          margin: 0 10px 0 0;
+          content: counter(ol)'.';
+          color: $--accent-color;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &__hint {
+    position: absolute;
+    top: $--step-padding;
+    right: $--step-padding;
+    max-width: 205px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  &__hint-title {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: $--accent-color;
+  }
+
+  &__hint-descr {}
+
+  &__title {
+    margin: 0 0 20px;
+  }
+
+  &__btn {
+    margin: 15px 0 0 auto;
+  }
+}

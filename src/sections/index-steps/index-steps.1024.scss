@@ -1,3 +1,43 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-steps {
+  &__title {}
+
+  &__list {
+    flex-wrap: wrap;
+  }
+}
+
+.steps {
+  &__item {}
+}
+
+.step {
+  width: 50%;
+
+  &::before {
+    font-size: 72px;
+  }
+
+  &:nth-child(2n) {
+    border-left: 0;
+  }
+
+  &:nth-child(n+3) {
+    border-top: 0;
+  }
+
+  &__hint {}
+
+  &__hint-title {}
+
+  &__hint-descr {}
+
+  &__title {}
+
+  &__btn {
+    margin-top: 50px;
+  }
+}
