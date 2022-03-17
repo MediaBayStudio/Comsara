@@ -37,6 +37,8 @@ $logo_url = wp_get_attachment_url( $logo_id );
  */
 $webp_support = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false || strpos( $_SERVER['HTTP_USER_AGENT'], ' Chrome/' ) !== false;
 
+require $template_directory . '/inc/create-logotype-image.php';
+
 // Создание <link rel="preload" /> для img
 require $template_directory . '/inc/create-link-preload.php';
 

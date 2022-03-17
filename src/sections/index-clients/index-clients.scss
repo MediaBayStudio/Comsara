@@ -1,3 +1,36 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-clients {
+  &__title {}
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.clients {
+  &__item {
+    margin: 0 -1px -1px 0;
+    padding: 15px;
+    width: calc(50% + 1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid $--border-color;
+    filter: grayscale(1);
+    transition: filter .5s;
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.client {
+  &__img {
+    width: 78%;
+  }
+}

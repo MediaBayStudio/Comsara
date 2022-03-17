@@ -1,3 +1,19 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-clients {
+  &__title {}
+
+  &__list {}
+}
+
+.clients {
+  &__item {
+    height: 230px;
+  }
+}
+
+.client {
+  &__img {}
+}
