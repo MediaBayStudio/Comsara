@@ -1,3 +1,46 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-outstaffing {
+  flex-flow: wrap;
+
+  &__title {
+    width: 100%;
+  }
+
+  &__descr {
+    margin: 0 20px 0 0;
+    width: calc(50% - 10px);
+    font-size: 30px;
+  }
+
+  &__pic {
+    margin: auto;
+    width: calc(50% - 10px);
+
+    &::before,
+    &::after {}
+
+    &::before {}
+
+    &::after {}
+  }
+
+  &__img {}
+
+  &__other-text-block {
+    margin: 20px 0 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__other-text {
+    width: calc(50% - 10px);
+
+    &:nth-child(odd) {
+      margin-right: 20px;
+    }
+  }
+}

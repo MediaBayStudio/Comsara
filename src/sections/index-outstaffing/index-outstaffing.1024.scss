@@ -1,3 +1,38 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-outstaffing {
+
+  &__title {}
+
+  &__descr {
+    margin: 0 30px 0 0;
+    width: calc(50% - 15px);
+    font-size: 36px;
+  }
+
+  &__pic {
+    width: calc(50% - 15px);
+
+    &::before,
+    &::after {}
+
+    &::before {}
+
+    &::after {}
+  }
+
+  &__img {}
+
+  &__other-text-block {}
+
+  &__other-text {
+    margin: 30px 0 0;
+    width: calc(50% - 15px);
+
+    &:nth-child(odd) {
+      margin-right: 30px;
+    }
+  }
+}
