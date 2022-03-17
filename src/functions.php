@@ -7,6 +7,7 @@ $version = '1.0.0';
 $template_directory_uri = get_template_directory_uri();
 $template_directory = get_template_directory();
 $site_url = site_url();
+$img_url = $template_directory_uri . '/img';
 $screen_widths = ['0', '576', '768', '1024', '1280'];
 
 $upload_dir = wp_get_upload_dir();

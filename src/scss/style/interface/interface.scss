@@ -24,6 +24,10 @@ body {
   }
 }
 
+[data-scroll-target] {
+  cursor: pointer;
+}
+
 // Page wrapper
 #page-wrapper {
   display: flex;

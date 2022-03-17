@@ -1,3 +1,28 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-services {
+  &__title {}
+
+  &__descr {
+    max-width: 535px;
+  }
+
+  &__pic {
+    margin: 45px 0 0;
+  }
+
+  &__img {}
+
+  &__list {
+    margin: 0 100px 0 0;
+    width: 480px;
+  }
+}
+
+.services-list {
+  &__item {
+    &:nth-last-child(n+2) {}
+  }
+}

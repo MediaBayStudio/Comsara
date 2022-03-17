@@ -19,6 +19,12 @@
   &__nav-list {
     display: flex;
     align-items: center;
+    .nav-link {
+      transition: color .5s;
+      &:hover {
+        color: $--accent-color;
+      }
+    }
   }
 
   &__nav-li {
