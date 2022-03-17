@@ -4,15 +4,22 @@
 
 .btn {
   font: 500 14px/1.5 $--text-font;
+  transition: border-color .5s, background .5s;
 }
 
 .btn-primary {
   border: 1px solid $--accent-color;
   background: $--accent-color;
   color: $--white-color;
+  &:hover {
+    background: $--black-color;
+  }
 }
 
 .btn-ol-primary {
   border: 1px solid $--accent-color;
   color: $--black-color;
+  &:hover {
+    border-color: transparent;
+  }
 }

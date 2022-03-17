@@ -1,3 +1,84 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-specialties {
+
+  // display: flex;
+  &__title {}
+
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    counter-reset: list;
+  }
+
+  &__descr {}
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__pic {}
+
+  &__btn {}
+}
+
+.specialties {
+  &__item {
+    margin: 0 -1px -1px 0;
+    width: 50%;
+    border: 1px solid $--border-color;
+    height: responsive('320->575', '185->230');
+  }
+
+  // first img, <div> with background
+  &__item-img {
+    order: 1;
+    background: center/cover no-repeat;
+    border: 1px solid $--border-color;
+  }
+
+  // second img, <picture>
+  &__item-pic {
+    order: 4;
+  }
+
+  &__item-p {
+    border: 0;
+    padding: 0 10px 10px 0;
+  }
+
+  &__item-btn {
+    border: 0;
+    padding: 10px;
+    order: 100;
+  }
+
+  &__item-btn,
+  &__item-p {}
+}
+
+.specialtiy {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  counter-increment: list;
+  font: 300 24px/1.5 $--text-font;
+  letter-spacing: 0.01em;
+  text-align: center;
+
+  &::before {
+    content: '0'counter(list);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: $--accent-color;
+    font: 500 14px/1 $--text-font;
+    letter-spacing: normal;
+  }
+}

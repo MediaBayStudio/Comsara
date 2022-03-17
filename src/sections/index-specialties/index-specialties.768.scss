@@ -1,3 +1,57 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-specialties {
+
+  &__title {}
+
+  &__block {}
+
+  &__descr {}
+
+  &__img {}
+
+  &__pic {}
+
+  &__btn {}
+}
+
+.specialties {
+  &__item {
+    width: calc(100% / 3);
+    height: 235px;
+  }
+
+  // first img, <div> with background
+  &__item-img {}
+
+  // second img, <picture>
+  &__item-pic {
+    order: 2;
+  }
+
+  &__item-p {
+    padding: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-btn {
+    padding: 20px;
+  }
+
+  &__item-btn,
+  &__item-p {}
+}
+
+.specialtiy {
+  padding: 20px;
+  font-size: 30px;
+
+  &::before {
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+  }
+}

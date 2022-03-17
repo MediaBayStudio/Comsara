@@ -1,3 +1,42 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-specialties {
+
+  &__title {}
+
+  &__block {}
+
+  &__descr {}
+
+  &__img {}
+
+  &__pic {}
+
+  &__btn {}
+}
+
+.specialties {
+  &__item {
+    height: 295px;
+  }
+
+  // first img, <div> with background
+  &__item-img {}
+
+  // second img, <picture>
+  &__item-pic {}
+
+  &__item-p {}
+
+  &__item-btn {}
+
+  &__item-btn,
+  &__item-p {}
+}
+
+.specialtiy {
+
+  &::before {}
+}
