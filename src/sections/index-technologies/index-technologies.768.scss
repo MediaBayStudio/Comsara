@@ -1,3 +1,25 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-technologies {
+  &__title {}
+
+  &__list {
+    &:not(.slick-slider) {
+      max-height: none;
+      overflow: visible;
+    }
+  }
+}
+
+.technologies {
+  &__item {
+    width: calc((100% + 5px) / 5);
+    height: 110px;
+  }
+}
+
+.technology {
+  &__img {}
+}

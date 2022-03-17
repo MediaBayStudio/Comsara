@@ -2,7 +2,7 @@
 if ( $section['title'] ) : ?>
   <h2 class="index-features__title sect-h2"><?php echo $section['title'] ?></h2> <?php
 endif ?>
-<ul class="index-features__list"> <?php
+<ul class="index-features__list lazy"> <?php
   foreach ( $section['items'] as $item ) : ?>
     <li class="features__item">
       <div data-src="url(<?php echo $item['icon']['url'] ?>)" class="feature__img lazy"></div>

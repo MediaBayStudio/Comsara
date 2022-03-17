@@ -1,3 +1,23 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-technologies {
+  &__title {}
+
+  &__list {}
+}
+
+.technologies {
+  &__item {
+    width: calc((100% + 6px) / 6);
+    height: 120px;
+  }
+}
+
+.technology {
+  &__img {
+    width: 81.5%;
+    height: 70%;
+  }
+}
