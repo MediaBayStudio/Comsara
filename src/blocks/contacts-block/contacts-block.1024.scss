@@ -3,7 +3,9 @@
 @import '../../scss/assets/variables';
 
 .contacts-block {
-  &__contact {}
+  &__contact {
+    font-size: 36px;
+  }
 
   &__contact-title {}
 

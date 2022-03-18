@@ -1,4 +1,110 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+// Error message
+p.invalid {}
+
+.check {
+
+  &__inp {
+
+    &:checked {
+      +.check-tick__pseudo-inp {
+        &::before {}
+      }
+
+      +.check-fill__pseudo-inp {}
+    }
+  }
+
+  &__pseudo-inp {}
+
+  &__text {}
+
+  &__link {
+
+    &:hover {}
+  }
+
+  >p.invalid {}
+
+  // START Checkbox with tick ✔
+  &-tick {
+
+    &:hover {
+      >.check__pseudo-inp {}
+
+      >.check__text {}
+    }
+
+    &__pseudo-inp {
+
+      &::before {}
+    }
+
+    &__text {}
+  }
+
+  // END Checkbox with tick ✔
+
+  // START Checkbox with background
+  &-fill {
+    &:hover {
+      >.check__pseudo-inp {}
+
+      >.check__text {}
+    }
+
+    &__pseudo-inp {}
+
+    &__text {}
+  }
+
+  // END Checkbox with background
+}
+
+// START Field (input, textarea)
+.field {
+  font-size: 18px;
+
+  &__textarea,
+  &__inp {
+
+    &::placeholder {}
+
+    &.invalid {}
+
+    &:focus,
+    &.filled {
+      &.valid {}
+    }
+  }
+
+  &__textarea {}
+
+  // START Field (input, textarea) with text placeholder
+  &__text {}
+
+  &__textarea,
+  &__inp {
+
+    &:focus,
+    &.filled {
+
+      ~.field__text {}
+    }
+  }
+
+  &__textarea {
+
+    &:focus,
+    &.filled {
+      ~.field__text {}
+    }
+  }
+
+  // END Field (input, textarea) with text placeholder
+}
+
+// END Field (input, textarea)

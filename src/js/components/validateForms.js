@@ -1,6 +1,6 @@
 (function() {
   const $forms = [
-    // id("form")
+    id('index-contacts-form')
     // qa('#conacts-form')
   ];
   const patterns = {
@@ -14,7 +14,7 @@
     const $formBtn = params.formBtn;
     const $uploadFilesBlock = params.uploadFilesBlock;
     const errorsClass = "invalid";
-    const defaultError = "Ошибка заполнения";
+    const defaultError = "Field error";
     const errorsTag = "p";
     // Rules from jquery.validate
     const rules = {
@@ -42,23 +42,23 @@
     const messages = {
       tel: {
         // required: 'Введите ваш телефон или E-mail',
-        required: "Введите ваш телефон",
-        pattern: "Укажите верный телефон",
+        required: "Enter your phone",
+        // pattern: "Укажите верный телефон",
       },
       name: {
-        required: "Введите ваше имя",
+        required: "Enter your name",
       },
       email: {
         // required: 'Введите ваш E-mail или телефон',
-        required: "Введите ваш E-mail",
-        pattern: "Введите верный E-mail",
+        required: "Enter your E-mail",
+        pattern: "Invalid E-mail",
       },
       msg: {
-        required: "Введите ваше сообщение",
-        pattern: "Введены недопустимые символы",
+        required: "Type a message",
+        pattern: "Invalid message",
       },
       policy: {
-        required: "Согласитель с политикой обработки персональных данных",
+        required: "Accept privacy policy",
       }
     };
 
