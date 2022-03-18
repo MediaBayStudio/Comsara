@@ -24,6 +24,29 @@
     visibility: visible;
   }
 
+  .fail-block,
+  .success-block {
+    display: none;
+  }
+
+  &.success {
+    div[role="form"] {
+      display: none;
+    }
+    .success-block {
+      display: flex;
+    }
+  }
+
+  &.fail {
+    div[role="form"] {
+      display: none;
+    }
+    .fail-block {
+      display: flex;
+    }
+  }
+
   &__cnt {
     // Popup inside
     padding: 65px 20px 50px;

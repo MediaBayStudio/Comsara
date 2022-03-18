@@ -13,7 +13,7 @@ function fail_block( $args = [] ) {
 
   <div class="fail-block"> <?php
     if ( $parsed_args['icon'] ) : ?>
-      <img src="#" alt="fail icon" dats-src="<?php echo $template_directory_uri . $parsed_args['icon'] ?>" class="fail-block__title lazy"> <?php
+      <img src="#" alt="fail icon" data-src="<?php echo $template_directory_uri . $parsed_args['icon'] ?>" class="fail-block__status-img lazy"> <?php
     endif;
     if ( $parsed_args['title'] ) : ?>
       <h2 class="fail-block__title sect-h2"><?php echo $parsed_args['title'] ?></h2> <?php
@@ -22,8 +22,8 @@ function fail_block( $args = [] ) {
       <p class="fail-block__descr"><?php echo $parsed_args['descr'] ?></p> <?php
     endif;
     if ( $parsed_args['btn'] ) : ?>
-      <button class="fail-block__btn"><?php echo $parsed_args['btn'] ?></button> <?php
+      <button class="fail-block__btn btn btn-ol-primary"><?php echo $parsed_args['btn'] ?></button> <?php
     endif ?>    
-  </div>
+  </div> <?php
 
 }

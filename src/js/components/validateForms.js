@@ -21,12 +21,15 @@
     const errorsTag = "p";
     // Rules from jquery.validate
     const rules = {
+      file: {
+        required: true
+      },
       name: {
         required: true,
       },
       tel: {
         required: true,
-        pattern: patterns.tel,
+        // pattern: patterns.tel,
         // or: 'email'
       },
       email: {
@@ -43,6 +46,9 @@
       },
     };
     const messages = {
+      file: {
+        required: 'Upload your CV'
+      },
       tel: {
         // required: 'Введите ваш телефон или E-mail',
         required: "Enter your phone",
@@ -72,6 +78,20 @@
 
       if ($formBtn) {
         $formBtn.addEventListener("click", function(e) {
+          if ($form.file && $form.file.multiple) {
+            if (!$form['file[]']) {
+              $form.file.removeAttribute('data-value');
+            }
+
+            $form.file.value = '';
+            // check filetypes
+            // if ($form.file.value) {
+              // let fileTypes = $form.file.getAttribute('data-type');
+              // if (fileTypes) {
+                // fileTypes = fileTypes.split('|');
+              // }
+            // }
+          }
           validationForm();
 
           if ($form.validatie === false) {
@@ -91,6 +111,25 @@
       }
 
       $form.addEventListener("input", toggleInputsClass);
+
+      const fileInput = q('[type="file"]', $form);
+
+      if (fileInput) {
+        $form.file = fileInput;
+        $form.elements.file = fileInput;
+        if (fileInput.multiple) {
+          $form.addEventListener('click', function(e) {
+            const target = e.target;
+            const parent = target.closest('.remove-file');
+            if (parent) {
+              if (!$form['file[]']) {
+                $form.file.removeAttribute('data-value');
+              }
+            }
+          });
+        }
+      }
+
     };
 
     /**
@@ -107,7 +146,26 @@
 
         if (formElement) {
           // const formElementEndingRule = rules[formElementName].ending || formElement.getAttribute('data-ending');
-          let formElementValue = formElement.value;
+          if (formElement.type === 'file' && formElement.multiple) {
+            const multifileField = formElements['file[]'];
+            if (multifileField) {
+              let multifileFieldValue = [];
+              if (multifileField.constructor === HTMLInputElement) {
+                multifileFieldValue = multifileField.value;
+              } else {
+                for (let i = 0, len = multifileField.length; i < len; i++) {
+                  multifileFieldValue[multifileFieldValue.length] = multifileField.value;
+                }
+                if (multifileFieldValue) {
+                  multifileFieldValue = multifileFieldValue.join();
+                } else {
+                  multifileFieldValue = '';
+                }
+              }
+              formElement.setAttribute('data-value', multifileFieldValue);
+            }
+          }
+          let formElementValue = formElement.value || formElement.getAttribute('data-value') || '';
 
           // if (formElementEndingRule) {
           // formElementValue = formElementValue.replace(formElementEndingRule, '');
@@ -117,6 +175,8 @@
         }
       }
 
+      // console.log(data);
+
       return data;
     };
 
@@ -125,6 +185,7 @@
      * @description Show or hide errors, set form.validate to true or false
      */
     const validationForm = function() {
+      // console.log('validationForm');
       const errors = {};
       const thisForm = $form;
       const values = getFormData(thisForm);
@@ -150,6 +211,13 @@
             const maxlength = rule.maxlength || +$formElement.getAttribute('maxlength');
             const isCheckboxOrRadio = elementType === "checkbox" || elementType === "radio";
             const isNumberOrRange = elementType === "number" || elementType === "range";
+
+            // Validation multifile
+            // if (elementType === 'file' && $formElement.multiple) {
+            //   if ($form['file[]'] && $formElement.hasAttribute('data-value')) {
+            //     hideError($formElement);
+            //   }
+            // }
 
             // Validation required
             if ((isCheckboxOrRadio && !$formElement.checked) || elementValue === "") {
@@ -213,8 +281,13 @@
       }
     };
 
-    const showErrors = function($form, errors) {
-      const $formElements = $form.elements;
+    const showErrors = function($parent, errors) {
+      let $formElements;
+      if ($parent.constructor === HTMLFormElement) {
+        $formElements = $parent.elements;
+      } else {
+
+      }
 
       for (const elementName in errors) {
         const errorText = errors[elementName] || defaultError;
@@ -244,8 +317,10 @@
     };
 
     const submitHandler = function(event) {
+      console.log(event);
       const $form = q("#" + event.detail.id + ">form") || event.target;
       const eventType = event.type;
+      const parentPopup = $form.closest('.popup') || $form.closest('.index-contacts');
 
       if ($form.tagName !== 'FORM') {
         $form = q('form', $form);
@@ -261,25 +336,41 @@
           $formElements[i].classList.remove("filled");
         }
 
-        if ($uploadFilesBlock) {
-          $uploadFilesBlock.innerHTML = "";
-        }
+        // if ($uploadFilesBlock) {
+        //   $uploadFilesBlock.innerHTML = "";
+        // }
         // if ($form === $quizForm) {
         //   id('quiz').resetQuiz();
         // }
 
-        setTimeout(function() {
-          $form.classList.remove("sent");
-        }, 3000);
+        // setTimeout(function() {
+        //   $form.classList.remove("sent");
+        // }, 3000);
 
         // thanksPopup.openPopup();
         // thanksPopupTimer = setTimeout(function() {
         //   thanksPopup.closePopup();
         // }, 3000);
 
+        if (parentPopup) {
+          parentPopup.classList.add('success');
+          parentPopup.addEventListener('click', function(e) {
+            if (e.target.classList.contains('success-block__btn')) {
+              parentPopup.classList.remove('success');
+            }
+          });
+        }
+
         console.log("sent");
       } else if ($form.classList.contains('failed')) {
-        errorPopup && errorPopup.openPopup();
+        if (parentPopup) {
+          parentPopup.classList.add('fail');
+          parentPopup.addEventListener('click', function(e) {
+            if (e.target.classList.contains('fail-block__btn')) {
+              parentPopup.classList.remove('fail');
+            }
+          });
+        }
         console.log("fail");
       }
 
@@ -288,7 +379,7 @@
     };
 
     const toggleInputsClass = function(e) {
-      console.log('toggleInputsClass');
+      // console.log('toggleInputsClass');
       const $input = e.target;
       const type = $input.type;
       const files = $input.files;
@@ -309,7 +400,9 @@
               files[i].name +
               "</span></span>";
           }
-          $uploadFilesBlock.innerHTML = uploadedFiles;
+          // if ($uploadFilesBlock) {
+          //   $uploadFilesBlock.innerHTML = uploadedFiles;
+          // }
           break;
         default:
           if ($input.tagName === 'TEXTAREA') {
@@ -329,7 +422,7 @@
       formValidator({
         form: form,
         formBtn: formBtn,
-        uploadFilesBlock: q(".uploadedfiles", form),
+        uploadFilesBlock: q(".files-upload-block", form),
         filesInput: q('input[type="file"]', form)
       });
     }

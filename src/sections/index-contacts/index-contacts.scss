@@ -4,6 +4,31 @@
 
 .index-contacts {
 
+  .fail-block,
+  .success-block {
+    display: none;
+  }
+
+  &.fail,
+  &.success {
+    div[role="form"],
+    .index-contacts__form-title {
+      display: none;
+    }
+  }
+
+  &.success {
+    .success-block {
+      display: flex;
+    }
+  }
+
+  &.fail {
+    .fail-block {
+      display: flex;
+    }
+  }
+
   &-block {
     margin: 30px 0 0;
   }

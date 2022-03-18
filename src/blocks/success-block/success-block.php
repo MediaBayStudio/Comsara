@@ -13,7 +13,7 @@ function success_block( $args = [] ) {
 
   <div class="success-block"> <?php
     if ( $parsed_args['icon'] ) : ?>
-      <img src="#" alt="Success icon" dats-src="<?php echo $template_directory_uri . $parsed_args['icon'] ?>" class="success-block__title lazy"> <?php
+      <img src="#" alt="Success icon" data-src="<?php echo $template_directory_uri . $parsed_args['icon'] ?>" class="success-block__status-img lazy"> <?php
     endif;
     if ( $parsed_args['title'] ) : ?>
       <h2 class="success-block__title sect-h2"><?php echo $parsed_args['title'] ?></h2> <?php
@@ -22,8 +22,8 @@ function success_block( $args = [] ) {
       <p class="success-block__descr"><?php echo $parsed_args['descr'] ?></p> <?php
     endif;
     if ( $parsed_args['btn'] ) : ?>
-      <button class="success-block__btn"><?php echo $parsed_args['btn'] ?></button> <?php
+      <button class="success-block__btn btn btn-ol-primary"><?php echo $parsed_args['btn'] ?></button> <?php
     endif ?>    
-  </div>
+  </div> <?php
 
 }

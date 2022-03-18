@@ -15,6 +15,11 @@
   &__bottom {}
 }
 
+
+form {
+  position: relative;
+}
+
 // Error message
 p.invalid {
   position: absolute;
@@ -240,6 +245,7 @@ p.invalid {
 
 
 .files-upload-block {
+  position: relative;
 
   &.lazyloaded,
   &:not(.lazy) {

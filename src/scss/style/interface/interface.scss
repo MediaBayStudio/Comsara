@@ -118,15 +118,15 @@ body {
     animation: spin .5s linear infinite;
   }
 
-  // START white loader
-  &-white {
-    // background: $color;
+  // START blue loader
+  &-blue {
+    background: transparentize($--white-color, .5);
     >.loader__circle {
-      // border-top-color: $color;
-      // border-left-color: $color;
+      border-top-color: $--accent-color;
+      border-left-color: $--accent-color;
     }
   }
-  // END white loader
+  // END blue loader
 }
 /* END loader */
 

@@ -1,3 +1,24 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+
+.fail-block {
+  &__status-img {
+    margin: 0 0 40px;
+  }
+
+  &__title {
+    margin: 0 auto 30px;
+    max-width: 680px;
+  }
+
+  &__descr {
+    max-width: 680px;
+    font-size: 24px;
+  }
+
+  &__btn {
+    margin: 60px auto 0;
+  }
+}
