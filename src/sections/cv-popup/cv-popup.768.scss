@@ -3,15 +3,11 @@
 @import '../../scss/assets/variables';
 
 .cv-popup {
-  &__cnt {
-  }
+  &__cnt {}
 
-  &__close {
-  }
+  &__close {}
 
   &__form {
-    margin: auto;
-    max-width: 450px;
     .field {
       &__inp {}
 

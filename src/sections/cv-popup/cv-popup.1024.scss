@@ -10,10 +10,6 @@
   &__close {}
 
   &__form {
-    max-width: 680px;
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
 
     .field {
       &__inp {}
@@ -24,14 +20,10 @@
     .field-name,
     .field-surname,
     .field-tel,
-    .field-email {
-      width: calc(50% - 10px);
-    }
+    .field-email {}
 
     .field-name,
-    .field-tel {
-      margin-right: auto;
-    }
+    .field-tel {}
 
     .field-name {}
 
@@ -41,27 +33,21 @@
 
     .field-email {}
 
-    .files-upload-block {
-      width: 100%;
-    }
+    .files-upload-block {}
 
     .fileupload {
       &__title {}
     }
 
-    .codedropz-upload-wrapper {
-    }
+    .codedropz-upload-wrapper {}
 
     .wpcf7-drag-n-drop-file {}
 
-    .codedropz-upload-handler {
-      height: 135px;
-    }
+    .codedropz-upload-handler {}
 
     .codedropz-upload-container {}
 
-    .codedropz-upload-inner {
-    }
+    .codedropz-upload-inner {}
 
     .codedropz-btn-wrap {}
 
@@ -83,17 +69,8 @@
       &__policy-link {}
     }
 
-    .form__bottom {
-      margin: 50px 0 0;
-      width: 100%;
-      display: flex;
+    .form__bottom {}
 
-    }
-
-    .btn {
-      margin: 0 0 0 auto;
-      width: 280px;
-      height: 60px;
-    }
+    .btn {}
   }
 }

@@ -4,4 +4,4 @@ cvPopup = new Popup('.cv-popup', {
 cvPopup.addEventListener('popupclose', function() {
  cvPopup.classList.remove('success', 'fail');
 });
-cvPopup.openPopup();
+// cvPopup.openPopup();

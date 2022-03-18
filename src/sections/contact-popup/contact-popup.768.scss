@@ -1,3 +1,53 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.form {
+  &__title {}
+
+  &__descr {}
+
+  &__bottom {}
+}
+
+.contact-popup {
+  &__cnt {}
+
+  &__close {}
+
+  &__contacts-block {
+    margin: auto;
+    max-width: 450px;
+  }
+
+  &__form {
+    .field {
+      &__inp {}
+
+      &__text {}
+    }
+
+    .field-name {}
+
+    .field-company {}
+
+    .field-tel {}
+
+    .field-email {}
+
+    .check {
+      &__inp {}
+
+      &__pseudo-inp {}
+
+      &__text {}
+
+      &__link {}
+
+      &__policy-link {}
+    }
+
+    .btn {}
+
+  }
+}

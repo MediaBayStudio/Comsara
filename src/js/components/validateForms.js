@@ -2,7 +2,7 @@
   let $forms = [
     id('index-contacts-form')
   ];
-  const cvForms = qa('.cv-popup__form', document.body, true);
+  const cvForms = qa('.cv-popup__form, .contact-popup__form', document.body, true);
   if (cvForms) {
     $forms = $forms.concat(cvForms);
   }

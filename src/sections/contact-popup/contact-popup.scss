@@ -1,3 +1,61 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.contact-popup {
+  &.fail,
+  &.success {
+    .contact-popup__contacts-block {
+      display: none;
+    }
+  }
+  &__cnt {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    min-height: 100%;
+    .fail-block,
+    .success-block {
+      order: -1;
+    }
+  }
+
+  &__close {}
+
+  &__form {
+    margin-bottom: 20px;
+    padding: 0 0 70px;
+    border-bottom: 1px solid $--border-color;
+
+    .field {
+      &__inp {}
+
+      &__text {}
+    }
+
+    .field-name,
+    .field-company,
+    .field-tel,
+    .field-email {}
+
+    .field-name {}
+
+    .field-company {}
+
+    .field-tel {}
+
+    .field-email {}
+
+    .check {
+      &__inp {}
+
+      &__pseudo-inp {}
+
+      &__text {}
+
+      &__link {}
+
+      &__policy-link {}
+    }
+  }
+}

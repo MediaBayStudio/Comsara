@@ -30,4 +30,85 @@
   &__title {}
 
   &__descr {}
+
+  &__form {
+    max-width: 680px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+
+    .field {
+      &__inp {}
+
+      &__text {}
+    }
+
+    .field {
+      width: calc(50% - 10px);
+      &:nth-child(odd) {
+        margin-right: auto;
+      }
+    }
+
+    .field-name {}
+
+    .field-surname {}
+
+    .field-tel {}
+
+    .field-email {}
+
+    .files-upload-block {
+      margin: 0 0 50px;
+      width: 100%;
+    }
+
+    .fileupload {
+      &__title {}
+    }
+
+    .codedropz-upload-wrapper {}
+
+    .wpcf7-drag-n-drop-file {}
+
+    .codedropz-upload-handler {
+      height: 135px;
+    }
+
+    .codedropz-upload-container {}
+
+    .codedropz-upload-inner {}
+
+    .codedropz-btn-wrap {}
+
+    .cd-upload-btn {}
+
+    .dnd-upload-counter {}
+
+    .form__bottom {}
+
+    .check {
+      &__inp {}
+
+      &__pseudo-inp {}
+
+      &__text {}
+
+      &__link {}
+
+      &__policy-link {}
+    }
+
+    .form__bottom {
+      width: 100%;
+      display: flex;
+
+    }
+
+    .btn {
+      margin: 0 0 0 auto;
+      width: 280px;
+      height: 60px;
+    }
+  }
 }

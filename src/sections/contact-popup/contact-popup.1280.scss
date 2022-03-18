@@ -1,3 +1,40 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.contact-popup {
+  &__cnt {}
+
+  &__close {}
+
+  &__form {
+    .field {
+      &__inp {}
+
+      &__text {}
+    }
+
+    .field-name {}
+
+    .field-company {}
+
+    .field-tel {}
+
+    .field-email {}
+
+    .check {
+      &__inp {}
+
+      &__pseudo-inp {}
+
+      &__text {}
+
+      &__link {}
+
+      &__policy-link {}
+    }
+
+    .btn {}
+
+  }
+}
