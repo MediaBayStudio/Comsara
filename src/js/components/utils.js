@@ -107,6 +107,9 @@ var hdr;
  */
 var fakeScrollbar;
 
+var cvPopup;
+var contactsPopup;
+
 /**
 * @function q
 * @desc Short querySelector()

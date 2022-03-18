@@ -1,8 +1,11 @@
 (function() {
-  const $forms = [
+  let $forms = [
     id('index-contacts-form')
-    // qa('#conacts-form')
   ];
+  const cvForms = qa('.cv-popup__form', document.body, true);
+  if (cvForms) {
+    $forms = $forms.concat(cvForms);
+  }
   const patterns = {
     tel: /\+7\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}/,
     email: /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z])+$/,

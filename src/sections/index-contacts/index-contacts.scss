@@ -50,6 +50,7 @@
     .field-msg {}
 
     .check {
+      max-width: 100%;
       &__inp {}
 
       &__pseudo-inp {}
@@ -73,7 +74,9 @@
       height: 45px;
     }
 
-    .form__bottom {}
+    .form__bottom {
+      align-items: flex-start;
+    }
   }
 }
 

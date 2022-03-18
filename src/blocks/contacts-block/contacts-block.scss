@@ -24,6 +24,13 @@
   }
 
   &__contact-link {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color .5s;
+
+    &:hover {
+      border-bottom-color: currentColor;
+    }
+
     &:nth-last-child(n+2) {
       margin-bottom: 5px;
     }

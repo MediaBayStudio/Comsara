@@ -1,3 +1,26 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-forms {
+  margin: $--section-y-padding-1280 0;
+}
+
+.form-sect {
+  padding-top: $--section-y-padding-1280;
+  padding-bottom: $--section-y-padding-1280;
+
+  &:nth-child(odd) {
+    padding-right: 85px;
+  }
+
+  &:nth-child(2n) {
+    padding-left: 85px;
+  }
+
+  &__title {}
+
+  &__descr {}
+
+  &__btn {}
+}

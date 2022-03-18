@@ -1,4 +1,33 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+.popup {
+
+  &.active {}
+
+  &__cnt {}
+
+  // START close btn
+  &__close {
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+
+    &:active {}
+  }
+
+  // START close btn (pure css)
+  &__close {}
+
+  // END close btn (pure css)
+  // START close btn (svg)
+  &__close {}
+
+  // END close btn (svg)
+  // END close btn
+
+  &__title {}
+
+  &__descr {}
+}

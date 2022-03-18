@@ -1,18 +1,18 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
 .popup {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  // padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
-  background: #000;
+  background: transparentize($--black-color, .3);
   opacity: 0;
   visibility: hidden;
   transition: opacity .5s, visibility .5s;
@@ -26,21 +26,27 @@
 
   &__cnt {
     // Popup inside
-    background-color: #fff;
-    color: #000;
+    padding: 65px 20px 50px;
+    max-width: 100%;
+    background-color: $--white-color;
     position: relative;
   }
 
   // START close btn
   &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    
     &:active {
       transform: scale(.95);
     }
   }
+
   // START close btn (pure css)
-  &__close {
-    
-  }
+  &__close {}
+
   // END close btn (pure css)
   // START close btn (svg)
   &__close {
@@ -61,6 +67,7 @@
     //   fill: currentColor;
     // }
   }
+
   // END close btn (svg)
   // END close btn
 

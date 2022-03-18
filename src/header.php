@@ -80,19 +80,10 @@ $GLOBALS['page_style_name'] = $style_name ?>
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
 <head>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent%2CIntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest%2CElement.prototype.dataset%2CHTMLPictureElement"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent%2CIntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest%2CElement.prototype.dataset%2CHTMLPictureElement%2Cfetch"></script>
   <meta charset="<?php bloginfo('charset') ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- styles preload -->
-  <link rel="preload" as="style" href="<?php echo $template_directory_uri ?>/style.css"> <?php
-if ( $style_name ) :
-	foreach ( $screen_widths as $screen_width ) :
-		$suffix = $screen_width === '0' ? '' : '.' . $screen_width ?>
-		<link rel="preload" as="style" href="<?php echo "{$template_directory_uri}/css/{$style_name}{$suffix}.css?={$version}" ?>" /> <?php
-  endforeach;
-endif;
-echo PHP_EOL ?>
   <!-- fonts preload --> <?php
 	$fonts = [
 		'Prompt-Medium.woff',
@@ -110,7 +101,6 @@ echo PHP_EOL ?>
       create_link_preload( $item );
     }
     unset( $item );
-  echo PHP_EOL;
   } ?>
   <!-- favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $site_url ?>/apple-touch-icon.png">

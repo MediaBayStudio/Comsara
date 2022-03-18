@@ -2,6 +2,14 @@
 @import '../../assets/mixins';
 @import '../../assets/variables';
 
+.form {
+  &__title {}
+
+  &__descr {}
+
+  &__bottom {}
+}
+
 // Error message
 p.invalid {}
 
@@ -110,3 +118,26 @@ p.invalid {}
 }
 
 // END Field (input, textarea)
+
+
+.files-upload-block {}
+
+.fileupload {
+  &__title {}
+}
+
+.codedropz-upload-wrapper {}
+
+.wpcf7-drag-n-drop-file {}
+
+.codedropz-upload-handler {}
+
+.codedropz-upload-container {}
+
+.codedropz-upload-inner {}
+
+.codedropz-btn-wrap {}
+
+.cd-upload-btn {}
+
+.dnd-upload-counter {}

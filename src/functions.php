@@ -31,6 +31,9 @@ $hr_email = get_option( 'contacts_hr_email' );
 $logo_id = get_theme_mod( 'custom_logo' );
 $logo_url = wp_get_attachment_url( $logo_id );
 
+
+$preload_styles = [];
+
 /**
  * @var (bool) $webp_support
  * true if browser support the WebP image format
@@ -79,6 +82,8 @@ require $template_directory . '/inc/print-site-data-js.php';
 /**
  * blocks
  */
+require $template_directory . '/blocks/fail-block.php';
+require $template_directory . '/blocks/success-block.php';
 require $template_directory . '/blocks/contacts-block.php';
 
 if ( is_super_admin() || is_admin_bar_showing() ) {

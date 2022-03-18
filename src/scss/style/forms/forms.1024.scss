@@ -2,6 +2,16 @@
 @import '../../assets/mixins';
 @import '../../assets/variables';
 
+.form {
+  &__title {}
+
+  &__descr {
+    font-size: 24px;
+  }
+
+  &__bottom {}
+}
+
 // Error message
 p.invalid {}
 
@@ -108,3 +118,55 @@ p.invalid {}
 }
 
 // END Field (input, textarea)
+
+
+.files-upload-block {}
+
+.fileupload {
+  &__title {}
+}
+
+.codedropz-upload-wrapper {}
+
+.wpcf7-drag-n-drop-file {}
+
+.codedropz-upload-handler {}
+
+.codedropz-upload-container {}
+
+.codedropz-upload-inner {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto auto 1fr;
+  font: 16px/1 $--text-font;
+
+  &::before {
+    margin: 0 auto 15px;
+    grid-row: 1;
+    grid-column: 1/span 3;
+  }
+
+  >h3 {
+    display: block;
+    grid-row: 2;
+    grid-column: 1;
+    font-size: 16px;
+  }
+
+  >span {
+    margin: 0 5px;
+    display: block;
+    grid-row: 2;
+    grid-column: 2;
+  }
+}
+
+.codedropz-btn-wrap {
+  grid-row: 2;
+  grid-column: 3;
+  font-size: 16px;
+}
+
+.cd-upload-btn {}
+
+.dnd-upload-counter {}

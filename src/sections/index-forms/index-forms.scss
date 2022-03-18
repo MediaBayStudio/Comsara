@@ -1,3 +1,31 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-forms {
+  margin: $--section-y-padding-320 0;
+}
+
+.form-sect {
+  padding-top: $--section-y-padding-320;
+  padding-bottom: $--section-y-padding-320;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  background: $--background-color;
+
+  &:nth-child(2n) {
+    background: $--accent-color;
+    color: $--white-color;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+  }
+
+  &__descr {}
+
+  &__btn {
+    margin: 50px 0 0 auto;
+  }
+}

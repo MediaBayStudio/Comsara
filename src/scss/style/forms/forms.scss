@@ -2,6 +2,19 @@
 @import '../../assets/mixins';
 @import '../../assets/variables';
 
+.form {
+  &__title {
+    text-align: center;
+  }
+
+  &__descr {
+    margin: 0 0 50px;
+    text-align: center;
+  }
+
+  &__bottom {}
+}
+
 // Error message
 p.invalid {
   position: absolute;
@@ -14,7 +27,7 @@ p.invalid {
 .check {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   cursor: pointer;
   font: 300 12px/1.5 $--text-font;
 
@@ -24,6 +37,7 @@ p.invalid {
     &:checked {
       +.check-tick__pseudo-inp {
         background: $--accent-color;
+
         &::before {
           opacity: 1;
         }
@@ -70,7 +84,12 @@ p.invalid {
     max-width: 250px;
 
     &:hover {
-      >.check__pseudo-inp {}
+      >.check__pseudo-inp {
+        &::before {
+          border-color: $--border-color;
+          opacity: 1;
+        }
+      }
 
       >.check__text {}
     }
@@ -97,7 +116,7 @@ p.invalid {
         transform: rotate(-45deg);
         transform-origin: left;
         opacity: 0;
-        transition: opacity 0.5s;
+        transition: opacity .5s, border-color .5s;
         border-color: $--white-color;
       }
     }
@@ -218,3 +237,207 @@ p.invalid {
 }
 
 // END Field (input, textarea)
+
+
+.files-upload-block {
+
+  &.lazyloaded,
+  &:not(.lazy) {
+    // .codedropz-btn-wrap {
+    .codedropz-upload-inner {
+      &::before {
+        background-image: url('img/icon-upload-file.svg');
+      }
+    }
+  }
+}
+
+.fileupload {
+  &__title {
+    margin: 0 0 10px;
+    display: block;
+  }
+}
+
+.codedropz-upload-wrapper {
+  font-size: 14px;
+}
+
+.wpcf7-drag-n-drop-file {}
+
+.codedropz-upload-handler {
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $--background-color;
+  border: 1px dashed $--black-color;
+  transition: opacity .5s;
+  position: relative;
+
+  &.codedproz-dragover {
+    opacity: 0.25;
+  }
+}
+
+.codedropz-upload-container {}
+
+.codedropz-upload-inner {}
+
+.codedropz-upload-inner>h3,
+.codedropz-upload-inner>span,
+.wpcf7-drag-n-drop-file.d-none {
+  display: none;
+}
+
+// .codedropz-btn-wrap {
+.codedropz-upload-inner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  &::before {
+    margin: 0 0 15px;
+    content: '';
+    width: 42px;
+    height: 42px;
+    background: center/contain no-repeat;
+    transition: filter .5s;
+  }
+}
+
+.cd-upload-btn {
+  font: 500 14px/1 $--text-font;
+  color: $--accent-color;
+}
+
+.dnd-upload-counter {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 0.75em;
+}
+
+.dnd-upload-status {
+  margin: 15px 0 0;
+  display: flex;
+
+  &.complete {}
+
+  &.in-progress {
+    .remove-file {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
+
+.dnd-upload-image {
+  margin: 0 25px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .file {
+    width: 24px;
+    height: 31px;
+    background: url('img/icon-uploaded-file.svg') center/contain no-repeat;
+  }
+}
+
+.dnd-upload-details {
+  width: calc(100% - 49px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .name {
+    order: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    // filename
+    span {
+      max-width: 100%;
+      font: 500 14px/1.5 $--text-font;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: transparentize($--black-color, .5);
+    }
+
+    // filesize
+    em {
+      margin: 2px 0 0 auto;
+      flex-shrink: 0;
+      font: 300 normal .75em $--text-font // font-style: normal;
+    }
+  }
+
+  .remove-file {
+    order: 3;
+    margin: -1px 0 0 auto;
+  }
+
+  .has-error {
+    order: 4;
+  }
+}
+
+.dnd-icon-remove {
+  position: relative;
+  font-size: 14px;
+
+  &::after {}
+
+  &.deleting {
+    color: transparent;
+    transition: none;
+
+    &::before {
+      transform: none;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      animation: spin .5s linear infinite;
+      background: 0 0;
+      border-top-color: $--black-color;
+      border-left-color: $--black-color;
+      position: static;
+      width: 1em;
+      height: 1em;
+      display: block;
+    }
+    &::after {
+      font-size: 0;
+    }
+  }
+}
+
+.dnd-progress-bar {
+  order: 2;
+  display: block;
+  width: calc(100% - 24px);
+  height: 11px;
+  background: $--background-color;
+  overflow: hidden;
+
+  >span {
+    padding: 0 5px;
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    width: 0;
+    font-size: 0;
+    font: 300 .6em/11px $--text-font;
+    text-align: right;
+    color: $--white-color;
+    background: $--accent-color;
+  }
+}
+
+.codedropz-upload-wrapper .has-error-msg,
+.dnd-upload-details .has-error {
+  color: $--error-color;
+  font: 300 .75em/1.5 $--text-font;
+}

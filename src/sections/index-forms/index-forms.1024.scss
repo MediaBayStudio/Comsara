@@ -1,3 +1,32 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-forms {
+  margin: $--section-y-padding-1024 0;
+  display: flex;
+}
+
+.form-sect {
+  padding-top: $--section-y-padding-1024;
+  padding-bottom: $--section-y-padding-1024;
+  width: 50%;
+
+  &:nth-child(odd) {
+    padding-right: 30px;
+  }
+
+  &:nth-child(2n) {
+    padding-left: 30px;
+  }
+
+  &__title {
+    margin: 0 0 40px;
+  }
+
+  &__descr {}
+
+  &__btn {
+    margin-top: 70px;
+  }
+}

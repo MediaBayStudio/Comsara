@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //=include ../sections/index-contacts/index-contacts.js
 
+//=include ../sections/cv-popup/cv-popup.js
+
+//=include ../sections/contact-popup/contact-popup.js
+
 //=include ../sections/footer/footer.js
 
 });

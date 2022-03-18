@@ -1,0 +1,72 @@
+@import '../../scss/assets/colors';
+@import '../../scss/assets/mixins';
+@import '../../scss/assets/variables';
+
+.cv-popup {
+  &__cnt {
+  }
+
+  &__close {
+  }
+
+  &__form {
+    margin: auto;
+    max-width: 450px;
+    .field {
+      &__inp {}
+
+      &__text {}
+    }
+
+    .field-name,
+    .field-surname,
+    .field-tel,
+    .field-email {}
+
+    .field-name {}
+
+    .field-surname {}
+
+    .field-tel {}
+
+    .field-email {}
+
+    .files-upload-block {}
+
+    .fileupload {
+      &__title {}
+    }
+
+    .codedropz-upload-wrapper {}
+
+    .wpcf7-drag-n-drop-file {}
+
+    .codedropz-upload-handler {}
+
+    .codedropz-upload-container {}
+
+    .codedropz-upload-inner {}
+
+    .codedropz-btn-wrap {}
+
+    .cd-upload-btn {}
+
+    .dnd-upload-counter {}
+
+    .form__bottom {}
+
+    .check {
+      &__inp {}
+
+      &__pseudo-inp {}
+
+      &__text {}
+
+      &__link {}
+
+      &__policy-link {}
+    }
+
+    .btn {}
+  }
+}

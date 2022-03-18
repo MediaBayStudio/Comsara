@@ -5,7 +5,7 @@ function contacts_block( $className = '' ) {
   <div class="contacts-block<?php echo $className ?>">
     <div class="contacts-block__contact">
       <span class="contacts-block__contact-title">Call us:</span>
-      <a href="tel:<?php echo $tel_clean ?>" class="contacts-block__contact-tel"><?php echo $tel ?></a>
+      <a href="tel:<?php echo $tel_clean ?>" class="contacts-block__contact-tel contacts-block__contact-link"><?php echo $tel ?></a>
     </div>
     <div class="contacts-block__contact">
       <span class="contacts-block__contact-title">Write to e-mail:</span>
