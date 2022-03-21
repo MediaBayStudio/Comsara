@@ -6,6 +6,10 @@
 .hdr {
   height: $--header-height-1024;
 
+  &.sticky {
+    height: $--header-height-1024 - 20px;
+  }
+
   &__logo-img {}
 
   &__nav {

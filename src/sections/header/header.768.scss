@@ -6,6 +6,10 @@
 .hdr {
   height: $--header-height-768;
 
+  &.sticky {
+    height: $--header-height-768 - 20px;
+  }
+
   &__logo-img {
     width: 175px;
     height: 40px;

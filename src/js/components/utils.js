@@ -235,34 +235,34 @@ var pageScroll = function(disallow) {
 * @arg {HTMLElement|string} $el Element to fix.
 * @arg {string|null} fixThresholdDir 'top' or 'bottom' threshold of element, 'bottom' by default.
 * @arg {string|null} className 'fixed' by default. */
-var sticky = function($el, fixThresholdDir, className) {
-  $el = typeof $el === 'string' ? q($el) : $el;
-  className = className || 'fixed';
-  fixThresholdDir = fixThresholdDir || 'bottom';
+// var sticky = function($el, fixThresholdDir, className) {
+//   $el = typeof $el === 'string' ? q($el) : $el;
+//   className = className || 'fixed';
+//   fixThresholdDir = fixThresholdDir || 'bottom';
 
-  let fixThreshold = $el.getBoundingClientRect()[fixThresholdDir] + scrollY;
-  let $elClone = $el.cloneNode(true);
-  let $elParent = $el.parentElement;
-  let fixElement = function() {
-    if (!$el.classList.contains(className) && scrollY >= fixThreshold) {
-      $elParent.appendChild($elParent.replaceChild($elClone, $el));
-      $el.classList.add(className);
+//   let fixThreshold = $el.getBoundingClientRect()[fixThresholdDir] + scrollY;
+//   let $elClone = $el.cloneNode(true);
+//   let $elParent = $el.parentElement;
+//   let fixElement = function() {
+//     if (!$el.classList.contains(className) && scrollY >= fixThreshold) {
+//       $elParent.appendChild($elParent.replaceChild($elClone, $el));
+//       $el.classList.add(className);
 
-      window.removeEventListener('scroll', fixElement);
-      window.addEventListener('scroll', unfixElement);
-    }
-  };
-  let unfixElement = function() {
-    if ($el.classList.contains(className) && scrollY <= fixThreshold) {
-      $elParent.replaceChild($el, $elClone);
-      $el.classList.remove(className);
+//       window.removeEventListener('scroll', fixElement);
+//       window.addEventListener('scroll', unfixElement);
+//     }
+//   };
+//   let unfixElement = function() {
+//     if ($el.classList.contains(className) && scrollY <= fixThreshold) {
+//       $elParent.replaceChild($el, $elClone);
+//       $el.classList.remove(className);
 
-      window.removeEventListener('scroll', unfixElement);
-      window.addEventListener('scroll', fixElement);
-    }
-  };
+//       window.removeEventListener('scroll', unfixElement);
+//       window.addEventListener('scroll', fixElement);
+//     }
+//   };
 
-  $elClone.classList.add('clone');
-  fixElement();
-  window.addEventListener('scroll', fixElement);
-};
+//   $elClone.classList.add('clone');
+//   fixElement();
+//   window.addEventListener('scroll', fixElement);
+// };

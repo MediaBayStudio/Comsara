@@ -9,6 +9,22 @@
   height: $--header-height-320;
   background: $--white-color;
 
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top .5s;
+    height: $--header-height-320 - 20px;
+    .menu__hdr {
+      height: $--header-height-320 - 20px;
+    }
+  }
+
+  &.sticky-hidden {
+    top: -100%;
+  }
+
   &__logo-img {
     margin: 0 auto 0 0;
     object-fit: contain;
