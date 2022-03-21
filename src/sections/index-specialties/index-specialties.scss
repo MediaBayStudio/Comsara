@@ -52,9 +52,15 @@
   }
 
   &__item-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 0;
     padding: 10px;
     order: 100;
+    >.icon-arrow {
+      background: $--accent-color;
+    }
   }
 
   &__item-btn,

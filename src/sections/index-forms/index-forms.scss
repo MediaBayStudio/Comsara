@@ -17,6 +17,13 @@
   &:nth-child(2n) {
     background: $--accent-color;
     color: $--white-color;
+    .icon-arrow {
+      margin: 0 0 0 10px;
+      background: $--background-color;
+      .icon-arrow__path {
+        fill: $--accent-color;
+      }
+    }
   }
 
   &__title {
@@ -27,5 +34,11 @@
 
   &__btn {
     margin: 50px 0 0 auto;
+    display: flex;
+    align-items: center;
+    >.icon-arrow {
+      margin: 0 0 0 10px;
+      background: $--accent-color;
+    }
   }
 }

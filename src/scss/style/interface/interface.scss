@@ -28,6 +28,22 @@ body {
   cursor: pointer;
 }
 
+// переделать
+.icon-arrow {
+  margin: 0 0 0 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__svg {
+    width: 18px;
+    height: 15px;
+    fill: none;
+  }
+}
+
 // Page wrapper
 #page-wrapper {
   display: flex;
@@ -118,15 +134,15 @@ body {
     animation: spin .5s linear infinite;
   }
 
-  // START blue loader
-  &-blue {
+  // START primary loader
+  &-primary {
     background: transparentize($--white-color, .5);
     >.loader__circle {
       border-top-color: $--accent-color;
       border-left-color: $--accent-color;
     }
   }
-  // END blue loader
+  // END primary loader
 }
 /* END loader */
 

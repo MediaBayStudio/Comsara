@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // menu.open();
 
-  let navLinks = qa('.nav-link[href^="#"], .btn[data-scroll-target], .hdr__logo-img[data-scroll-target]');
+  let navLinks = qa('.nav-link[href^="#"], button[data-scroll-target], .hdr__logo-img[data-scroll-target]');
 
   for (let i = 0, len = navLinks.length; i < len; i++) {
     navLinks[i].addEventListener('click', scrollToTarget);
