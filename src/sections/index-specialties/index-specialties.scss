@@ -10,7 +10,7 @@
   &__block {
     display: flex;
     flex-wrap: wrap;
-    counter-reset: list;
+    // counter-reset: list;
   }
 
   &__descr {}
@@ -73,13 +73,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  counter-increment: list;
+  // counter-increment: list;
   font: 300 24px/1.5 $--text-font;
   letter-spacing: 0.01em;
   text-align: center;
 
   &::before {
-    content: '0'counter(list);
+    // content: '0'counter(list);
+    content: attr(data-order);
     position: absolute;
     top: 10px;
     left: 10px;

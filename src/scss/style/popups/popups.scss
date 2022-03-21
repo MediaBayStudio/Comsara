@@ -55,6 +55,7 @@
     max-width: 100%;
     background-color: $--white-color;
     position: relative;
+    overflow: hidden;
   }
 
   // START close btn
@@ -101,6 +102,10 @@
   &__descr {}
 
   &__form {
+    .files-upload-block {
+      margin: 0 0 20px;
+    }
+
     .form__bottom {}
 
     .check {

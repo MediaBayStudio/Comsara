@@ -40,6 +40,10 @@ add_action( 'save_post_page', function( $post_ID ) {
   $javascript_content .= PHP_EOL;
 
   $template_slug = str_replace( '.php', '', get_page_template_slug( $post_ID ) );
+  if ( !$template_slug ) {
+    $page = get_post( $post_ID );
+    $template_slug = $page->post_name;
+  }
   $page_info_cnt[ $template_slug ] = [];
 
   foreach ( $sections as $section ) {

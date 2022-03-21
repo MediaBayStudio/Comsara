@@ -12,6 +12,7 @@ global
   $template_directory,
   $template_directory_uri;
 
+$current_template = $GLOBALS['current_template'];
 $preload = [ $logo_url ];
 $preload[] = [
   'url' => $template_directory_uri . '/img/icon-burger.svg',
@@ -66,8 +67,8 @@ if ( is_front_page() ) {
   $style_name = 'style-index';
  } else {
   if ( $current_template ) {
-    $script_name = 'script-' . $GLOBALS['current_template'];
-    $style_name = 'style-' . $GLOBALS['current_template'];
+    $script_name = 'script-' . $current_template;
+    $style_name = 'style-' . $current_template;
   } else {
     $script_name = '';
     $style_name = '';

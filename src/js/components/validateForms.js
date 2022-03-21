@@ -86,10 +86,10 @@
             $form.file.value = '';
             // check filetypes
             // if ($form.file.value) {
-              // let fileTypes = $form.file.getAttribute('data-type');
-              // if (fileTypes) {
-                // fileTypes = fileTypes.split('|');
-              // }
+            // let fileTypes = $form.file.getAttribute('data-type');
+            // if (fileTypes) {
+            // fileTypes = fileTypes.split('|');
+            // }
             // }
           }
           validationForm();
@@ -417,14 +417,16 @@
 
   for (let i = $forms.length - 1; i >= 0; i--) {
     const form = $forms[i];
-    const formBtn = q(".btn", form) || q('.btn[form="' + form.id + '"]');
     if (form) {
-      formValidator({
-        form: form,
-        formBtn: formBtn,
-        uploadFilesBlock: q(".files-upload-block", form),
-        filesInput: q('input[type="file"]', form)
-      });
+      const formBtn = q(".btn", form) || q('.btn[form="' + form.id + '"]');
+      if (form) {
+        formValidator({
+          form: form,
+          formBtn: formBtn,
+          uploadFilesBlock: q(".files-upload-block", form),
+          filesInput: q('input[type="file"]', form)
+        });
+      }
     }
   }
 })();

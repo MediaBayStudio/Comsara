@@ -7,7 +7,7 @@
       if ( $index === 2) : ?>
         <div class=" specialties__item specialties__item-img lazy" data-src="url(<?php echo $img_url ?>/index-specialties-img-1.svg)"></div> <?php
       endif ?>
-      <div class="specialties__item specialtiy" style="order: <?php echo $index ?>"><?php echo $item['title'] ?></div> <?php
+      <div class="specialties__item specialtiy" data-order="<?php echo substr( '0' . ($index + 1), -2 ) ?>" style="order: <?php echo $index ?>"><?php echo $item['title'] ?></div> <?php
       $index++;
     endforeach;
     unset( $item, $index ) ?>

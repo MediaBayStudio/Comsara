@@ -23,6 +23,7 @@ const buildcss = require('./scripts/build/build-css.js');
 
 const buildJs = require('./scripts/watch/build-js.js');
 
+const movejs = require('./scripts/move/move-js.js');
 const movephp = require('./scripts/move/move-php.js');
 const movefonts = require('./scripts/move/move-fonts.js');
 const movejson = require('./scripts/move/move-json.js');
@@ -85,6 +86,7 @@ task('watchimg', watchimg);
 /**
  * Move tasks
  */
+task('movejs', movejs);
 task('movephp', movephp);
 task('movefonts', movefonts);
 task('movejson', movejson);
@@ -92,6 +94,7 @@ task('movefavicons', movefavicons);
 task('buildcss', buildcss);
 task('movecss', buildcss);
 task('moveall', parallel(
+  'movejs',
   'movephp',
   'movecss',
   'movefonts',

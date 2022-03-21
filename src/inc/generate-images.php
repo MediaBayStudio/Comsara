@@ -1,8 +1,12 @@
 <?php
 
+/**
+ * Fill array to register own image sizes
+ * @var array $image_sizes ['size_name' (string) => (number|array)]
+ */
 $image_sizes = [
   // 'desktop' => 1200,
-  // 'laptop' => 980,
+  // 'laptop' => 980, 
   // 'tablet' => 740,
   // 'mobile' => 576,
   // 'author_articles' => [300, 400]
@@ -23,8 +27,17 @@ if ( $image_sizes ) {
 
 add_action( 'wp_generate_attachment_metadata', 'generate_webp', 10, 3 );
 
+/**
+ * generate_webp
+ * Function for creating webp copies of an image uploaded to the wordpress library and its thumbnails.
+ * Usage:
+ * $image = image_get_intermediate_size( $img_id, 'webp' );
+ * @param array $metadata
+ * @param number $img_id
+ * @return array $metadata
+ */
 function generate_webp( $metadata, $img_id ) {
-  global $image_sizes, $upload_basedir, $template_directory;
+  global $image_sizes;
 
   $main_img_path = get_attached_file( $img_id );
   // if ( $metadata === [] ) {
@@ -50,7 +63,6 @@ function generate_webp( $metadata, $img_id ) {
       $image_height = $image_data[1];
 
       $webp_basename = $file_pathinfo['filename'] . '.webp';
-      $webp_filepath = $main_img_dirname . DIRECTORY_SEPARATOR . $webp_basename;
       $webp_size_name = $size_name . '_webp';
       $mime_type = 'image/webp';
 
