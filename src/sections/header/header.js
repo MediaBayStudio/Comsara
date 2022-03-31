@@ -1,5 +1,6 @@
 ;
 (function() {
+  const scrollUpBtn = q('.scroll-up');
   const hdrClone = hdr.cloneNode(true);
   const hdrParent = hdr.parentElement;
   const stickyThreshold = hdr.getBoundingClientRect().bottom + scrollY;
@@ -18,6 +19,7 @@
       window.removeEventListener('scroll', stickyHeader);
       window.addEventListener('scroll', unstickyHeader);
     }
+    scrollUpBtn.classList.toggle('hide', scrollY < 1000);
     lastScrollY = scrollY;
   }
   const unstickyHeader = function() {
@@ -36,9 +38,12 @@
         // console.log('to top');
         classListAction = 'add';
       }
-      if (Math.abs(lastScrollY - scrollY) > 7) {
+
+      scrollUpBtn.classList.toggle('hide', scrollY < 1000);
+
+      // if (Math.abs(lastScrollY - scrollY) > 7) {
         hdr.classList[classListAction](stickyHiddenClassName);
-      }
+      // }
     }
     lastScrollY = scrollY;
   }

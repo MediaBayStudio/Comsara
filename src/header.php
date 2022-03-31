@@ -8,7 +8,6 @@ global
   $version,
   $site_url,
   $logo_url,
-  $screen_widths,
   $template_directory,
   $template_directory_uri;
 
@@ -134,3 +133,4 @@ echo PHP_EOL ?>
       <button type="button" class="hdr__burger"></button> <?php
       require 'template-parts/mobile-menu.php' ?>
     </header>
+    <button type="button" class="scroll-up hide icon-arrow-rotate" data-scroll-target="0"></button>

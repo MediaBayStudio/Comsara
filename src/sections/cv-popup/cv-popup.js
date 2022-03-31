@@ -1,5 +1,5 @@
 cvPopup = new Popup('.cv-popup', {
-  openButtons: '[data-form-id="154"]',
+  openButtons: '.cv-popup-open',
   closeButtons: '.cv-popup__close'
 });
 cvPopup.addEventListener('popupclose', function() {

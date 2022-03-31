@@ -11,13 +11,41 @@ html[lang] {
   margin-top: 0 !important;
 }
 
+.scroll-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  color: $--accent-color;
+  border: 1px solid;
+  border-radius: 50%;
+  background: #fff;
+  transform: rotate(-135deg);
+  font-size: 10px;
+  transition: opacity .5s, visibility .5s;
+  z-index: 1;
+  &::before {
+    margin: -3px 0 0 -3px;
+  }
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 body {
   font: 300 14px/1.5 $--text-font;
   color: $--black-color;
   // no-scroll is added by open mobile-menu or popups
   &.no-scroll {
     overflow: hidden;
-  
+    
+    .hdr,
     .hdr.fixed {
       overflow-y: scroll;
     }
@@ -41,6 +69,19 @@ body {
     width: 18px;
     height: 15px;
     fill: none;
+  }
+}
+
+.icon-arrow-rotate {
+  &::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    // width: 10px;
+    // height: 10px;
+    border: 1px solid;
+    border-left: 0;
+    border-top: 0;
   }
 }
 

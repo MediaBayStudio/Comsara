@@ -1,5 +1,5 @@
 contactPopup = new Popup('.contact-popup', {
-  openButtons: '[data-form-id="6"]',
+  openButtons: '.contact-popup-open',
   closeButtons: '.contact-popup__close'
 });
 contactPopup.addEventListener('popupclose', function() {
